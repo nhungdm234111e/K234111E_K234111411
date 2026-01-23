@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './about.css',
 })
 export class About {
-  student_id: string="SV123"
+  student_id: string="K234111411"
   student_name: string="DANG MAI NHUNG"
   student_email: string="nhungdm234111411@st.uel.edu.vn"
   my_img="assets/customer1.png"
