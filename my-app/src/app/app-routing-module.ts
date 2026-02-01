@@ -16,6 +16,13 @@ import { Listproduct19 } from './listproduct19/listproduct19';
 import { Login19 } from './login19/login19';
 import { Ex19 } from './ex19/ex19';
 import { Serviceproduct19 } from './serviceproduct19/serviceproduct19';
+import { DongABankComponent } from './dong-abank-component/dong-abank-component';
+import { FakeProductComponent } from './fake-product-component/fake-product-component';
+import { Books } from './books/books';
+import { Ex27 } from './ex27/ex27';
+import { Ex28 } from './ex28/ex28';
+import { Form } from './form/form';
+import { ReactiveForm } from './reactive-form/reactive-form';
 
 const routes: Routes = [
   { path:"gioi-thieu", component: About },
@@ -33,7 +40,15 @@ const routes: Routes = [
   { path: 'list-product-19', component: Listproduct19 },
   { path: 'service-product-19', component: Serviceproduct19 },
   { path: 'login-19', component: Login19 },
+  { path:"dong-abank-component", component: DongABankComponent },
+  {path:"fake-product-component", component: FakeProductComponent},
+  {path:"ex-27", component: Ex27},
+  {path:"ex-28", component: Ex28},
+  {path:"ex-39", component: Books},
+  {path:"form", component: Form},
+  {path:"reactive-form", component: ReactiveForm},
   { path:"**", component: NotFound}
+
 ];
 
 @NgModule({

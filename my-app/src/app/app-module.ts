@@ -1,9 +1,8 @@
 import { NgModule, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule, RoutingComponent } from './app-routing-module';
 import { App } from './app';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { Ptb2 } from './ptb2/ptb2';
 import { LearnDirective } from './learn-directive/learn-directive';
 import { About } from './about/about';
@@ -28,6 +27,13 @@ import { Product19 } from './product19/product19';
 import { Listproduct19 } from './listproduct19/listproduct19';
 import { Login19 } from './login19/login19';
 import { Serviceproduct19 } from './serviceproduct19/serviceproduct19';
+import { DongABankComponent } from './dong-abank-component/dong-abank-component';
+import { FakeProductComponent } from './fake-product-component/fake-product-component';
+import { Books } from './books/books';
+import { Ex27 } from './ex27/ex27';
+import { Ex28 } from './ex28/ex28';
+import { Form } from './form/form';
+import { ReactiveForm } from './reactive-form/reactive-form';
 @NgModule({
   declarations: [
     App,
@@ -55,11 +61,20 @@ import { Serviceproduct19 } from './serviceproduct19/serviceproduct19';
     Login19,
     Serviceproduct19,
     RoutingComponent,
+    DongABankComponent,
+    FakeProductComponent,
+    Books,
+    Ex27,
+    Ex28,
+    Form,
+    ReactiveForm,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [
