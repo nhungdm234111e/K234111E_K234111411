@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Student } from '../student';
+import { Student } from './student';
 
 @Component({
   selector: 'app-form',

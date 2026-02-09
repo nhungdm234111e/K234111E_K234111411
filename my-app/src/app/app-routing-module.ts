@@ -23,6 +23,16 @@ import { Ex27 } from './ex27/ex27';
 import { Ex28 } from './ex28/ex28';
 import { Form } from './form/form';
 import { ReactiveForm } from './reactive-form/reactive-form';
+import { BookDetail } from './book-detail/book-detail';
+import { BookAPIService } from './book-api';
+import { FildUpload } from './fild-upload/fild-upload';
+import { NewBook } from './new-book/new-book';
+import { BookUpdate } from './book-update/book-update';
+import { BookDelete } from './book-delete/book-delete';
+import { Ex50BookDetails } from './ex50-book-details/ex50-book-details';
+import { Ex50 } from './ex50/ex50';
+import { Ex50NewBook } from './ex50-new-book/ex50-new-book';
+import { Ex50BookEdit } from './ex50-book-edit/ex50-book-edit';
 
 const routes: Routes = [
   { path:"gioi-thieu", component: About },
@@ -47,7 +57,18 @@ const routes: Routes = [
   {path:"ex-39", component: Books},
   {path:"form", component: Form},
   {path:"reactive-form", component: ReactiveForm},
-  { path:"**", component: NotFound}
+  {path:"ex-40", component: BookAPIService},
+  {path:"ex-41", component: BookDetail},
+  {path:"ex-41/:id", component: BookDetail},
+  {path:"ex-43", component: NewBook},
+  {path:"ex-45", component: BookUpdate},
+  {path:"ex-47", component: BookDelete},
+  {path:"ex-49", component: FildUpload},
+  {path:"ex-50", component: Ex50},
+  {path:"ex-50/book-details/:id", component: Ex50BookDetails},
+  {path:"ex-50-new-book", component: Ex50NewBook},
+  {path:"ex-50-book-edit/:id", component: Ex50BookEdit},
+  {path:"**", component: NotFound}
 
 ];
 

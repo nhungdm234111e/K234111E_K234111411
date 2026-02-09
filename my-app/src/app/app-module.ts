@@ -34,6 +34,16 @@ import { Ex27 } from './ex27/ex27';
 import { Ex28 } from './ex28/ex28';
 import { Form } from './form/form';
 import { ReactiveForm } from './reactive-form/reactive-form';
+import { BookDetail } from './book-detail/book-detail';
+import { FildUpload } from './fild-upload/fild-upload';
+import { NewBook } from './new-book/new-book';
+import { BookUpdate } from './book-update/book-update';
+import { BookDelete } from './book-delete/book-delete';
+import { Ex50 } from './ex50/ex50';
+import { Ex50BookDetails } from './ex50-book-details/ex50-book-details';
+import { Ex50NewBook } from './ex50-new-book/ex50-new-book';
+import { Ex50BookEdit } from './ex50-book-edit/ex50-book-edit';
+import { Ex50BookDelete } from './ex50-book-delete/ex50-book-delete';
 @NgModule({
   declarations: [
     App,
@@ -68,6 +78,16 @@ import { ReactiveForm } from './reactive-form/reactive-form';
     Ex28,
     Form,
     ReactiveForm,
+    BookDetail,
+    FildUpload,
+    NewBook,
+    BookUpdate,
+    BookDelete,
+    Ex50,
+    Ex50BookDetails,
+    Ex50NewBook,
+    Ex50BookEdit,
+    Ex50BookDelete,
 
   ],
   imports: [

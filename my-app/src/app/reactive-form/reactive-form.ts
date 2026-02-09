@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { customValidator, passwordValidator } from '../check.validator';
+import { customValidator, passwordValidator } from './check.validator';
 
 @Component({
   selector: 'app-reactive-form',
