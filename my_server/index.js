@@ -59,21 +59,20 @@ app.post("/books",cors(),(req,res)=>{
   res.send(database)
 
 app.delete("/books/:id",cors(),(req,res)=>{ 
-id=req.params["id"] 
-database = database.filter(x => x.BookId !== id); 
-res.send(database)     
+  id=req.params["id"] 
+  database = database.filter(x => x.BookId !== id); 
+  res.send(database)     
 }) 
   
 app.put("/books",cors(),(req,res)=>{ 
-book=database.find(x=>x.BookId==req.body.BookId) 
-if(book!=null) 
-{ 
-book.BookName=req.body.BookName 
-book.Price=req.body.Price 
-book.Image=req.body.Image 
-} 
-res.send(database) 
-}) 
+  book=database.find(x=>x.BookId==req.body.BookId) 
+  if(book!=null) 
+    { 
+    book.BookName=req.body.BookName 
+    book.Price=req.body.Price 
+    book.Image=req.body.Image 
+    } 
+  res.send(database) 
+  }) 
 }
-
 )

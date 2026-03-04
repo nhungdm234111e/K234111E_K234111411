@@ -33,6 +33,8 @@ import { Ex50BookDetails } from './ex50-book-details/ex50-book-details';
 import { Ex50 } from './ex50/ex50';
 import { Ex50NewBook } from './ex50-new-book/ex50-new-book';
 import { Ex50BookEdit } from './ex50-book-edit/ex50-book-edit';
+import { Momo } from './momo/momo';
+import { PaymentResult } from './payment-result/payment-result';
 
 const routes: Routes = [
   { path:"gioi-thieu", component: About },
@@ -68,6 +70,8 @@ const routes: Routes = [
   {path:"ex-50/book-details/:id", component: Ex50BookDetails},
   {path:"ex-50-new-book", component: Ex50NewBook},
   {path:"ex-50-book-edit/:id", component: Ex50BookEdit},
+  {path:"momo", component: Momo},
+  { path: 'payment-result', component: PaymentResult },
   {path:"**", component: NotFound}
 
 ];

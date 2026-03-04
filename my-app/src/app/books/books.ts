@@ -28,4 +28,13 @@ export class Books {
       error:(err)=>{this.errMessage=err} 
     }) 
   } 
+    updateBook(bookId: string) {
+    console.log('Update book:', bookId);
+    // TODO: xử lý logic update
+  }
+
+  deleteBook(bookId: string) {
+    console.log('Delete book:', bookId);
+    // TODO: xử lý logic delete
+  }
 } 

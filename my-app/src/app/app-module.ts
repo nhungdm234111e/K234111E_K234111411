@@ -44,6 +44,9 @@ import { Ex50BookDetails } from './ex50-book-details/ex50-book-details';
 import { Ex50NewBook } from './ex50-new-book/ex50-new-book';
 import { Ex50BookEdit } from './ex50-book-edit/ex50-book-edit';
 import { Ex50BookDelete } from './ex50-book-delete/ex50-book-delete';
+import { Momo } from './momo/momo';
+import { PaymentResult } from './payment-result/payment-result';
+import { ProductMomo } from './product-momo/product-momo';
 @NgModule({
   declarations: [
     App,
@@ -88,6 +91,9 @@ import { Ex50BookDelete } from './ex50-book-delete/ex50-book-delete';
     Ex50NewBook,
     Ex50BookEdit,
     Ex50BookDelete,
+    Momo,
+    PaymentResult,
+    ProductMomo,
 
   ],
   imports: [
