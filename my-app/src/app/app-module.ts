@@ -54,6 +54,8 @@ import { FashionNew } from './fashion-new/fashion-new';
 import { FashionEditComponent } from './fashion-edit/fashion-edit';
 import { FashionDeleteComponent } from './fashion-delete/fashion-delete';
 import { LoginEx61 } from './login-ex61/login-ex61';
+import { ProductList63 } from './product-list-63/product-list-63';
+import { Cart63Component } from './cart-63/cart-63';
 
 @NgModule({
   declarations: [
@@ -109,6 +111,8 @@ import { LoginEx61 } from './login-ex61/login-ex61';
     FashionEditComponent,
     FashionDeleteComponent,
     LoginEx61,
+    ProductList63,
+    Cart63Component,
   ],
   imports: [
     BrowserModule,

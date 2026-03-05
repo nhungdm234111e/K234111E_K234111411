@@ -2,6 +2,9 @@ const express = require('express');
 const app = express();
 const port = 3002;
 
+
+const uri = "mongodb://localhost:27017";
+
 // ✅ require TẤT CẢ thư viện TRƯỚC TIÊN
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
@@ -9,6 +12,9 @@ const cors = require("cors");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const { MongoClient, ObjectId } = require('mongodb');
+
+
+app.use('/images', express.static('images'));
 
 const SECRET_KEY = "mySecretKey123";
 
@@ -194,3 +200,109 @@ app.get("/read-cookie",cors(),(req,res)=>{
     }     
     res.send(infor)     
 }) 
+
+var session = require('express-session'); 
+app.use(session({secret: "Shh, its a secret!"})); 
+
+app.get("/contact",cors(),(req,res)=>{ 
+    if(req.session.visited!=null) 
+    { 
+        req.session.visited++ 
+        res.send("You visited this page "+req.session.visited +" times") 
+    } 
+    else 
+    { 
+        req.session.visited=1 
+        res.send("Welcome to this page for the first time!") 
+    } 
+}) 
+
+// =============================================
+// API 1: Lấy danh sách tất cả Product từ MongoDB
+// =============================================
+app.get("/products", cors(), async (req, res) => {
+    try {
+        const client = await MongoClient.connect(uri);
+        const db = client.db("FashionData");
+        const collection = db.collection("Product");
+        const data = await collection.find({}).toArray();
+        res.json(data);
+        client.close();
+    } catch (err) {
+        res.json({ error: err.message });
+    }
+})
+
+// =============================================
+// API 2: Thêm 1 sản phẩm vào giỏ hàng (Session)
+// =============================================
+app.post("/cart/add", cors(), (req, res) => {
+    const product = req.body; // Nhận product từ Angular gửi lên
+
+    // Nếu giỏ hàng chưa tồn tại trong session thì tạo mảng rỗng
+    if (req.session.cart == null) {
+        req.session.cart = [];
+    }
+
+    // Kiểm tra sản phẩm đã có trong giỏ chưa
+    const index = req.session.cart.findIndex(
+        item => item.ProductId === product.ProductId
+    );
+
+    if (index >= 0) {
+        // Nếu đã có → tăng số lượng lên 1
+        req.session.cart[index].quantity++;
+    } else {
+        // Nếu chưa có → thêm mới với quantity = 1
+        product.quantity = 1;
+        req.session.cart.push(product);
+    }
+
+    res.json({ message: "Added to cart!", cart: req.session.cart });
+})
+
+// =============================================
+// API 3: Xem giỏ hàng hiện tại
+// =============================================
+app.get("/cart", cors(), (req, res) => {
+    // Nếu chưa có giỏ hàng thì trả về mảng rỗng
+    if (req.session.cart == null) {
+        res.json([]);
+    } else {
+        res.json(req.session.cart);
+    }
+})
+
+// =============================================
+// API 4: Xóa 1 sản phẩm khỏi giỏ hàng
+// =============================================
+app.post("/cart/remove", cors(), (req, res) => {
+    const productId = req.body.ProductId;
+
+    if (req.session.cart != null) {
+        // Lọc ra những sản phẩm KHÔNG phải sản phẩm cần xóa
+        req.session.cart = req.session.cart.filter(
+            item => item.ProductId !== productId
+        );
+    }
+
+    res.json({ message: "Removed!", cart: req.session.cart });
+})
+
+// =============================================
+// API 5: Cập nhật số lượng sản phẩm trong giỏ
+// =============================================
+app.post("/cart/update", cors(), (req, res) => {
+    const { ProductId, quantity } = req.body;
+
+    if (req.session.cart != null) {
+        const index = req.session.cart.findIndex(
+            item => item.ProductId === ProductId
+        );
+        if (index >= 0) {
+            req.session.cart[index].quantity = quantity;
+        }
+    }
+
+    res.json({ message: "Updated!", cart: req.session.cart });
+})

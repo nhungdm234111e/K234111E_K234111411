@@ -43,6 +43,8 @@ import { FashionNew } from './fashion-new/fashion-new';
 import { FashionEditComponent} from './fashion-edit/fashion-edit';
 import { FashionDeleteComponent } from './fashion-delete/fashion-delete';
 import { LoginEx61 } from './login-ex61/login-ex61';
+import { ProductList63 } from './product-list-63/product-list-63';
+import { Cart63Component } from './cart-63/cart-63';
 
 const routes: Routes = [
   {path:"gioi-thieu", component: About },
@@ -88,6 +90,8 @@ const routes: Routes = [
   {path:"ex-56", component: FashionEditComponent},
   {path:"ex-57", component: FashionDeleteComponent},
   {path:"ex-61", component: LoginEx61},
+  {path:'product-list-63', component: ProductList63},
+  {path:'cart-63', component: Cart63Component},
   {path:"**", component: NotFound}
 
 ];
