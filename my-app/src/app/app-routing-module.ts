@@ -35,24 +35,32 @@ import { Ex50NewBook } from './ex50-new-book/ex50-new-book';
 import { Ex50BookEdit } from './ex50-book-edit/ex50-book-edit';
 import { Momo } from './momo/momo';
 import { PaymentResult } from './payment-result/payment-result';
+import { ProductMomo } from './product-momo/product-momo';
+import { Fashion } from './fashion/fashion';
+import { FashionDetail } from './fashion-detail/fashion-detail';
+import { LoginFashion } from './login-fashion/login-fashion';
+import { FashionNew } from './fashion-new/fashion-new';
+import { FashionEditComponent} from './fashion-edit/fashion-edit';
+import { FashionDeleteComponent } from './fashion-delete/fashion-delete';
+import { LoginEx61 } from './login-ex61/login-ex61';
 
 const routes: Routes = [
-  { path:"gioi-thieu", component: About },
-  { path:"khach-hang-1", component: ListCustomer},
-  { path:"khach-hang-2", component: ListCustomer2},
-  { path:"khach-hang-3", component: ListCustomer3},
-  { path:"san-pham-1", component: ListProduct},
-  { path:"san-pham-1/:id", component: ProductDetails},
+  {path:"gioi-thieu", component: About },
+  {path:"khach-hang-1", component: ListCustomer},
+  {path:"khach-hang-2", component: ListCustomer2},
+  {path:"khach-hang-3", component: ListCustomer3},
+  {path:"san-pham-1", component: ListProduct},
+  {path:"san-pham-1/:id", component: ProductDetails},
   {path:'ex-13', component:Ex13}, 
   {path:'service-product-image-event/:id', component:ServiceProductImageDetails}, 
   {path:'ex-14', component:Ex14},
   {path:'ex-18', component:Ex18},
-  { path:'ex-19', component: Ex19},
-  { path: 'product-19', component: Product19 },
-  { path: 'list-product-19', component: Listproduct19 },
-  { path: 'service-product-19', component: Serviceproduct19 },
-  { path: 'login-19', component: Login19 },
-  { path:"dong-abank-component", component: DongABankComponent },
+  {path:'ex-19', component: Ex19},
+  {path: 'product-19', component: Product19 },
+  {path: 'list-product-19', component: Listproduct19 },
+  {path: 'service-product-19', component: Serviceproduct19 },
+  {path: 'login-19', component: Login19 },
+  {path:"dong-abank-component", component: DongABankComponent },
   {path:"fake-product-component", component: FakeProductComponent},
   {path:"ex-27", component: Ex27},
   {path:"ex-28", component: Ex28},
@@ -71,7 +79,15 @@ const routes: Routes = [
   {path:"ex-50-new-book", component: Ex50NewBook},
   {path:"ex-50-book-edit/:id", component: Ex50BookEdit},
   {path:"momo", component: Momo},
-  { path: 'payment-result', component: PaymentResult },
+  {path:'payment-result', component: PaymentResult },
+  {path:"product-momo", component: ProductMomo},
+  {path:"ex-53", component: Fashion},
+  {path:"ex-54/:id", component: FashionDetail},
+  {path: "login-fashion", component: LoginFashion},
+  {path:"ex-55", component: FashionNew},
+  {path:"ex-56", component: FashionEditComponent},
+  {path:"ex-57", component: FashionDeleteComponent},
+  {path:"ex-61", component: LoginEx61},
   {path:"**", component: NotFound}
 
 ];

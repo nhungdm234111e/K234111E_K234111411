@@ -47,6 +47,14 @@ import { Ex50BookDelete } from './ex50-book-delete/ex50-book-delete';
 import { Momo } from './momo/momo';
 import { PaymentResult } from './payment-result/payment-result';
 import { ProductMomo } from './product-momo/product-momo';
+import { Fashion } from './fashion/fashion';
+import { FashionDetail } from './fashion-detail/fashion-detail';
+import { LoginFashion } from './login-fashion/login-fashion';
+import { FashionNew } from './fashion-new/fashion-new';
+import { FashionEditComponent } from './fashion-edit/fashion-edit';
+import { FashionDeleteComponent } from './fashion-delete/fashion-delete';
+import { LoginEx61 } from './login-ex61/login-ex61';
+
 @NgModule({
   declarations: [
     App,
@@ -94,7 +102,13 @@ import { ProductMomo } from './product-momo/product-momo';
     Momo,
     PaymentResult,
     ProductMomo,
-
+    Fashion,
+    FashionDetail,
+    LoginFashion,
+    FashionNew,
+    FashionEditComponent,
+    FashionDeleteComponent,
+    LoginEx61,
   ],
   imports: [
     BrowserModule,
