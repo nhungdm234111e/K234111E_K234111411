@@ -1,20 +1,30 @@
-<div class="container" *ngIf="fashion">
-  <div class="page-header">
-    <button class="btn-back" (click)="goBack()">← Quay lại danh sách</button>
+<div class="detail-wrap" *ngIf="fashion">
+
+  <!-- HEADER -->
+  <div class="detail-header">
+    <button class="btn-back" (click)="goBack()">← Back to list</button>
+    <span class="header-label">Admin — View Detail</span>
+    <button class="btn-edit" (click)="goEdit()">Edit →</button>
   </div>
 
-  <p class="detail-style">{{fashion.style}}</p>
-  <h2 class="detail-title">{{fashion.title}}</h2>
-  <p class="detail-date">Ngày tạo: {{fashion.createdAt | date:'dd/MM/yyyy HH:mm'}}</p>
+  <!-- CONTENT -->
+  <div class="detail-content">
+    <div class="meta-row">
+      <span class="tag">{{ fashion.style }}</span>
+      <span class="meta-date">{{ fashion.createdAt | date:'dd MMMM yyyy' }}</span>
+    </div>
 
-  <img class="detail-thumb"
-       src="{{fashion.thumbnail}}"
-       onerror="this.src='https://via.placeholder.com/400x250?text=No+Image'">
+    <h1 class="detail-title">{{ fashion.title }}</h1>
 
-  <hr>
-  <!-- Render HTML từ WYSIWYG -->
-  <div class="detail-body" [innerHTML]="fashion.details"></div>
+    <div class="detail-divider"></div>
+
+    <img class="detail-img" [src]="fashion.thumbnail"
+         onerror="this.src='https://via.placeholder.com/800x400?text=No+Image'">
+
+    <div class="detail-body" [innerHTML]="fashion.details"></div>
+  </div>
+
 </div>
 
-<div *ngIf="!fashion && !errMessage" class="loading">⏳ Đang tải...</div>
-<p class="err">{{errMessage}}</p>
+<div *ngIf="!fashion && !errMessage" class="loading">Loading...</div>
+<p class="err-msg" *ngIf="errMessage">{{ errMessage }}</p>

@@ -1,23 +1,35 @@
-<div class="detail-page" *ngIf="fashion">
+<div class="page" *ngIf="fashion">
+
+  <!-- HEADER -->
   <div class="site-header">
-    <button class="btn-back" (click)="goBack()">← Quay lại</button>
+    <button class="btn-back" (click)="goBack()">← Back</button>
     <span class="logo">FASHION</span>
-    <span></span>
+    <span style="width:80px"></span>
   </div>
 
-  <div class="content">
-    <p class="detail-style">{{fashion.style}}</p>
-    <h1 class="detail-title">{{fashion.title}}</h1>
-    <p class="detail-date">{{fashion.createdAt | date:'MMMM d, y'}}</p>
+  <!-- ARTICLE -->
+  <article class="article">
 
-    <img class="detail-thumb"
-         src="{{fashion.thumbnail}}"
-         onerror="this.src='https://via.placeholder.com/800x400?text=No+Image'">
+    <div class="article-meta">
+      <span class="tag">{{ fashion.style }}</span>
+      <span class="meta-date">{{ fashion.createdAt | date:'MMMM d, y' }}</span>
+    </div>
 
-    <!-- Render nội dung HTML từ WYSIWYG editor -->
-    <div class="detail-body" [innerHTML]="safeDetails"></div>
-  </div>
+    <h1 class="article-title">{{ fashion.title }}</h1>
+
+    <div class="article-divider"></div>
+
+    <img class="article-img" [src]="fashion.thumbnail"
+         onerror="this.src='https://via.placeholder.com/800x480?text=No+Image'">
+
+    <!-- WYSIWYG HTML content -->
+    <div class="article-body" [innerHTML]="safeDetails"></div>
+
+  </article>
+
 </div>
 
-<div *ngIf="!fashion && !errMessage" class="loading">⏳ Đang tải...</div>
-<p class="err">{{errMessage}}</p>
+<div *ngIf="!fashion && !errMessage" class="loading">
+  <div class="loading-dot"></div>
+</div>
+<p class="err-msg" *ngIf="errMessage">{{ errMessage }}</p>
