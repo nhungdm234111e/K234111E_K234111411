@@ -45,6 +45,13 @@ import { FashionDeleteComponent } from './fashion-delete/fashion-delete';
 import { LoginEx61 } from './login-ex61/login-ex61';
 import { ProductList63 } from './product-list-63/product-list-63';
 import { Cart63Component } from './cart-63/cart-63';
+import { FashionList } from './fashion-list/fashion-list';
+import { FashionDetail58 } from './fashion-detail58/fashion-detail58';
+import { FashionNew58 } from './fashion-new58/fashion-new58';
+import { FashionEdit58 } from './fashion-edit58/fashion-edit58';
+import { FashionClientDetail58 } from './fashion-client-detail58/fashion-client-detail58';
+import { FashionClient58 } from './fashion-client58/fashion-client58';
+import { Ex58 } from './ex58/ex58';
 
 const routes: Routes = [
   {path:"gioi-thieu", component: About },
@@ -92,6 +99,14 @@ const routes: Routes = [
   {path:"ex-61", component: LoginEx61},
   {path:'product-list-63', component: ProductList63},
   {path:'cart-63', component: Cart63Component},
+{path:"ex-58",                   component: FashionClient58},
+{path:"ex-58-client-detail/:id", component: FashionClientDetail58},
+{path:"ex-58-admin",             component: FashionList},
+{path:"ex-58-new",               component: FashionNew58},
+{path:"ex-58-edit/:id",          component: FashionEdit58},
+{path:"ex-58-detail/:id",        component: FashionDetail58},
+{path:"ex-58-homepage",          component: Ex58},
+  {path:"ex-58-homepage", component: Ex58},
   {path:"**", component: NotFound}
 
 ];

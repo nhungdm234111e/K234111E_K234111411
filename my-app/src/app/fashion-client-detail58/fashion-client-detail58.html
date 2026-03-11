@@ -1,0 +1,23 @@
+<div class="detail-page" *ngIf="fashion">
+  <div class="site-header">
+    <button class="btn-back" (click)="goBack()">← Quay lại</button>
+    <span class="logo">FASHION</span>
+    <span></span>
+  </div>
+
+  <div class="content">
+    <p class="detail-style">{{fashion.style}}</p>
+    <h1 class="detail-title">{{fashion.title}}</h1>
+    <p class="detail-date">{{fashion.createdAt | date:'MMMM d, y'}}</p>
+
+    <img class="detail-thumb"
+         src="{{fashion.thumbnail}}"
+         onerror="this.src='https://via.placeholder.com/800x400?text=No+Image'">
+
+    <!-- Render nội dung HTML từ WYSIWYG editor -->
+    <div class="detail-body" [innerHTML]="safeDetails"></div>
+  </div>
+</div>
+
+<div *ngIf="!fashion && !errMessage" class="loading">⏳ Đang tải...</div>
+<p class="err">{{errMessage}}</p>

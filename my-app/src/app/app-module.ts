@@ -2,18 +2,18 @@ import { NgModule, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule, RoutingComponent } from './app-routing-module';
 import { App } from './app';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Ptb2 } from './ptb2/ptb2';
 import { LearnDirective } from './learn-directive/learn-directive';
 import { About } from './about/about';
 import { Contact } from './contact/contact';
 import { Learnbinding } from './learnbinding/learnbinding';
 import { Ptb1 } from './ptb1/ptb1';
-import {Ex10Component} from './ex10/ex10';
+import { Ex10Component } from './ex10/ex10';
 import { ListCustomer } from './list-customer/list-customer';
 import { ListCustomer2 } from './list-customer2/list-customer2';
 import { CustomerDetails } from './customer-details/customer-details';
-import { ListCustomer3 } from './list-customer3/list-customer3';  
+import { ListCustomer3 } from './list-customer3/list-customer3';
 import { HttpClientModule } from '@angular/common/http';
 import { Ex14 } from './ex14/ex14';
 import { NotFound } from './not-found/not-found';
@@ -56,6 +56,16 @@ import { FashionDeleteComponent } from './fashion-delete/fashion-delete';
 import { LoginEx61 } from './login-ex61/login-ex61';
 import { ProductList63 } from './product-list-63/product-list-63';
 import { Cart63Component } from './cart-63/cart-63';
+// ===== BÀI 58 =====
+import { FashionList } from './fashion-list/fashion-list';
+import { FashionDetail58 } from './fashion-detail58/fashion-detail58';
+import { FashionNew58 } from './fashion-new58/fashion-new58';
+import { FashionEdit58 } from './fashion-edit58/fashion-edit58';
+import { FashionClient58 } from './fashion-client58/fashion-client58';
+import { FashionClientDetail58 } from './fashion-client-detail58/fashion-client-detail58';
+
+// TinyMCE (WYSIWYG editor)
+import { EditorModule, TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular'; 
 
 @NgModule({
   declarations: [
@@ -113,16 +123,26 @@ import { Cart63Component } from './cart-63/cart-63';
     LoginEx61,
     ProductList63,
     Cart63Component,
+    // ===== BÀI 58 =====
+    FashionList,
+    FashionDetail58,
+    FashionNew58,
+    FashionEdit58,
+    FashionClient58,
+    FashionClientDetail58,
+    // ❌ KHÔNG để EditorModule ở đây — nó là Module, không phải Component
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    EditorModule, // ✅ Module thì để ở imports
   ],
   providers: [
-    provideBrowserGlobalErrorListeners()
+    provideBrowserGlobalErrorListeners(),
+    { provide: TINYMCE_SCRIPT_SRC, useValue: 'tinymce/tinymce.min.js' } // ✅ đúng
   ],
   bootstrap: [App]
 })
