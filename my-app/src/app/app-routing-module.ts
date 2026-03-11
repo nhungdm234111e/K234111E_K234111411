@@ -105,8 +105,6 @@ const routes: Routes = [
 {path:"ex-58-new",               component: FashionNew58},
 {path:"ex-58-edit/:id",          component: FashionEdit58},
 {path:"ex-58-detail/:id",        component: FashionDetail58},
-{path:"ex-58-homepage",          component: Ex58},
-  {path:"ex-58-homepage", component: Ex58},
   {path:"**", component: NotFound}
 
 ];
